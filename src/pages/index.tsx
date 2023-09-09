@@ -2,6 +2,7 @@ import Head from "next/head";
 import splashImage from "@src/images/splashlogo.png";
 import Image from "next/image";
 import { BsGithub } from "react-icons/bs";
+import Link from "next/link";
 export default function Home() {
   return (
     <>
@@ -17,13 +18,13 @@ export default function Home() {
           {"I'm a software developer."}
         </span>
         <div className="flex flex-row gap-4 pt-2 text-white">
-          <a
+          <Link
             href="/ocv"
             className="group relative inline-block cursor-pointer transition hover:scale-110"
           >
             Online CV
             <span className="absolute bottom-0 left-0 h-[0.5%] w-full origin-left transform bg-white transition-all group-hover:bg-emerald-400"></span>
-          </a>
+          </Link>
 
           <span className="group relative inline-block cursor-pointer transition hover:scale-110">
             Download CV ▾
