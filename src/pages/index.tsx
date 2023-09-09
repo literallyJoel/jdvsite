@@ -52,7 +52,7 @@ export default function Home() {
         >
           <div className="flex flex-row items-center justify-center gap-4">
             <BsGithub />
-            View this site on GitHub
+            <span className="hidden lg:inline">View this site on GitHub</span>
           </div>
         </a>
       </main>

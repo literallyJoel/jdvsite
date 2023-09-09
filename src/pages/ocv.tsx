@@ -1,5 +1,26 @@
+import AboutMe from "@src/ocv/AboutMe";
+import SideBar from "@src/ocv/SideBar";
+import Head from "next/head";
+import { useState } from "react";
+export type ViewMode = "about" | "skills" | "education" | "experience";
+
 const OCV = (): JSX.Element => {
-  return <></>;
+  const [viewMode, setViewMode] = useState<ViewMode>("about");
+
+  return (
+    <>
+      <Head>
+        <title>JDVivian - CV</title>
+        <meta name="description" content="JDVivian - CV" />
+        <link rel="icon" href="/favicon.png" />
+      </Head>
+
+      <main className="flex min-h-screen flex-row bg-gradient-to-b from-jdvred to-jdvredlight">
+        <SideBar viewMode={viewMode} setViewMode={setViewMode} />
+        {viewMode === "about" && <AboutMe />}
+      </main>
+    </>
+  );
 };
 
 export default OCV;
