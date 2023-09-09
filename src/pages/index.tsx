@@ -26,14 +26,14 @@ export default function Home() {
             <span className="absolute bottom-0 left-0 h-[0.5%] w-full origin-left transform bg-white transition-all group-hover:bg-emerald-400"></span>
           </Link>
 
-          <span className="group relative inline-block cursor-pointer transition hover:scale-110">
+          <span className="group relative z-10 inline-block cursor-pointer transition hover:scale-110">
             Download CV ▾
-            <span className="absolute bottom-0 left-0 h-[0.5%] w-full origin-left transform bg-white group-hover:hidden"></span>
+            <span className="absolute bottom-0 left-0 z-0 h-[0.5%] w-full origin-left transform bg-white group-hover:hidden"></span>
             <div className="invisible  absolute w-full -translate-y-1/4 flex-col rounded-b-md bg-white transition-transform duration-300 group-hover:visible group-hover:flex group-hover:translate-y-0">
-              <span className="p-4 text-sm text-black transition-colors hover:bg-jdvred hover:text-white">
+              <span className="p-4 text-sm text-black transition-colors hover:bg-emerald-600 hover:text-white">
                 Word
               </span>
-              <span className="tranisiton-colors rounded-b-md p-4 text-sm text-black  hover:bg-jdvred hover:text-white">
+              <span className="tranisiton-colors rounded-b-md p-4 text-sm text-black  hover:bg-emerald-600 hover:text-white">
                 PDF
               </span>
             </div>
