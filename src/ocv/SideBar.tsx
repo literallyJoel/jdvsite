@@ -3,6 +3,11 @@ import Link from "next/link";
 import splashLogo from "@src/images/splashlogo.png";
 import type { ViewMode } from "@src/pages/ocv";
 import clsx from "clsx";
+import { CgProfile } from "react-icons/cg";
+import { BsCardChecklist } from "react-icons/bs";
+import { MdOutlineClass } from "react-icons/md";
+import { HiOutlineDocumentText } from "react-icons/hi";
+import { SidebarButton } from "./SidebarButton";
 
 interface props {
   viewMode: ViewMode;
@@ -20,66 +25,36 @@ const SideBar = ({ viewMode, setViewMode }: props): JSX.Element => {
           <Image src={splashLogo} height={50} width={50} alt="JDVLogo" />
         </Link>
       </div>
-      <button
-        className={clsx(
-          "group w-full border-emerald-500 p-2 text-white hover:border-l-4",
-          { "border-l-4": viewMode === "about" },
-        )}
-        onClick={() => setViewMode("about")}
-      >
-        <p
-          className={clsx("transition-transform group-hover:scale-125", {
-            "scale-125": viewMode === "about",
-          })}
-        >
-          About me
-        </p>
-      </button>
-      <button
-        className={clsx(
-          "group w-full border-emerald-500 p-2 text-white hover:border-l-4",
-          { "border-l-4": viewMode === "skills" },
-        )}
-        onClick={() => setViewMode("skills")}
-      >
-        <p
-          className={clsx("transition-transform group-hover:scale-125", {
-            "scale-125": viewMode === "skills",
-          })}
-        >
-          My Skills
-        </p>
-      </button>
-      <button
-        className={clsx(
-          "group w-full border-emerald-500 p-2 text-white hover:border-l-4",
-          { "border-l-4": viewMode === "education" },
-        )}
-        onClick={() => setViewMode("education")}
-      >
-        <p
-          className={clsx("transition-transform group-hover:scale-125", {
-            "scale-125": viewMode === "education",
-          })}
-        >
-          My Education
-        </p>
-      </button>
-      <button
-        className={clsx(
-          "group w-full border-emerald-500 p-2 text-white hover:border-l-4",
-          { "border-l-4": viewMode === "experience" },
-        )}
-        onClick={() => setViewMode("experience")}
-      >
-        <p
-          className={clsx("transition-transform group-hover:scale-125", {
-            "scale-125": viewMode === "experience",
-          })}
-        >
-          My Experience
-        </p>
-      </button>
+
+      <SidebarButton
+        buttonViewMode="about"
+        currentViewMode={viewMode}
+        setViewMode={setViewMode}
+        Icon={CgProfile}
+        text="About"
+      />
+
+      <SidebarButton
+        buttonViewMode="skills"
+        currentViewMode={viewMode}
+        setViewMode={setViewMode}
+        Icon={BsCardChecklist}
+        text="My Skills"
+      />
+      <SidebarButton
+        buttonViewMode="education"
+        currentViewMode={viewMode}
+        setViewMode={setViewMode}
+        Icon={MdOutlineClass}
+        text="My Education"
+      />
+      <SidebarButton
+        buttonViewMode="experience"
+        currentViewMode={viewMode}
+        setViewMode={setViewMode}
+        Icon={HiOutlineDocumentText}
+        text="My Experience"
+      />
     </div>
   );
 };

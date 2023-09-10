@@ -15,9 +15,11 @@ const AboutMe = (): JSX.Element => {
       />
 
       <p className="p-2 text-3xl font-bold text-white">Joel Vivian</p>
-      <p className="text-xl text-white">3rd Year Computer Science Student</p>
-      <p className="text-white">University of Liverpool</p>
-      <p className="w-1/2 p-2 text-center text-sm text-white">
+      <p className="text-center text-xl text-white">
+        3rd Year Computer Science Student
+      </p>
+      <p className="text-center text-white">University of Liverpool</p>
+      <p className="p-2 text-center text-sm text-white md:w-1/2">
         I am a computer Science student & former IT Support Technician with
         skills in React, NodeJS, Java, Python, Powershell, Azure, DevOps,
         Computer Hardware, and Customer Support.
@@ -27,7 +29,7 @@ const AboutMe = (): JSX.Element => {
         <a
           href="https://github.com/literallyJoel"
           target="_blank"
-          className="transition-transform hover:scale-110 hover:text-[#333]"
+          className="transition-transform hover:scale-125 hover:text-[#333]"
         >
           <BsGithub />
         </a>
@@ -35,7 +37,7 @@ const AboutMe = (): JSX.Element => {
         <a
           href="https://www.linkedin.com/in/jdvivian/"
           target="_blank"
-          className="transition-transform hover:scale-110 hover:text-[#0077b5]"
+          className="transition-transform hover:scale-125 hover:text-[#0077b5]"
         >
           <BsLinkedin />
         </a>
@@ -43,7 +45,7 @@ const AboutMe = (): JSX.Element => {
         <a
           href="mailto:joel@jdvivian.co.uk"
           target="_blank"
-          className="transition-transform hover:scale-110 hover:text-emerald-500"
+          className="transition-transform hover:scale-125 hover:text-emerald-500"
         >
           <HiOutlineMail />
         </a>
