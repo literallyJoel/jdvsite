@@ -19,10 +19,10 @@ interface props {
 
 const SideBar = ({ viewMode, setViewMode }: props): JSX.Element => {
   return (
-    <div className="flex h-screen w-2/12 flex-col items-center gap-8 border-r-2 border-white pt-4">
+    <div className="flex h-screen w-2/12 flex-col items-center gap-8 border-r-2 border-white pt-4 pr-2">
       <div className="flex flex-row items-center justify-center pb-8 transition-transform hover:scale-125">
         <Link href="/">
-          <Image src={splashLogo} height={50} width={50} alt="JDVLogo" />
+          <Image src={splashLogo} className="w-10 h-10 md:w-20 md:h-20" alt="JDVLogo" />
         </Link>
       </div>
 

@@ -1,4 +1,4 @@
-import { exampleRouter } from "@src/server/api/routers/example";
+import { ocvRouter } from "@src/server/api/routers/ocv";
 import { createTRPCRouter } from "@src/server/api/trpc";
 
 /**
@@ -7,7 +7,7 @@ import { createTRPCRouter } from "@src/server/api/trpc";
  * All routers added in /api/routers should be manually added here.
  */
 export const appRouter = createTRPCRouter({
-  example: exampleRouter,
+  ocv: ocvRouter,
 });
 
 // export type definition of API

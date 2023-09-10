@@ -20,7 +20,7 @@ export const SidebarButton = ({
   return (
     <button
       className={clsx(
-        "group flex w-full justify-center border-emerald-500 p-2 text-white hover:border-l-4",
+        "font-monsterrat group flex w-full justify-center border-emerald-500 p-2 text-white hover:border-l-4",
         { "border-l-4": buttonViewMode === currentViewMode },
       )}
       onClick={() => setViewMode(buttonViewMode)}
@@ -33,7 +33,7 @@ export const SidebarButton = ({
           },
         )}
       >
-        <Icon className="text-2xl" />
+        <Icon size={25} />
         <p className="hidden md:inline">{text}</p>
       </div>
     </button>

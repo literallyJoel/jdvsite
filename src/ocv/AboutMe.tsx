@@ -5,7 +5,7 @@ import { HiOutlineMail } from "react-icons/hi";
 
 const AboutMe = (): JSX.Element => {
   return (
-    <div className="flex h-screen w-full flex-col items-center p-8">
+    <div className="flex font-monsterrat h-screen w-full flex-col items-center p-8">
       <Image
         src={profile}
         width={200}

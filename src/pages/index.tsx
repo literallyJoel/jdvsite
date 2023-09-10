@@ -6,12 +6,13 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
+    
       <Head>
         <title>JDVivian</title>
         <meta name="description" content="JDVivian" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-jdvred to-jdvredlight">
+      <main className="font-Montserrat flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-jdvred to-jdvredlight">
         <Image src={splashImage} width={250} height={250} alt="JDVLogo" />
         <span className="pt-4 text-4xl text-white">{"Hi, I'm Joel."}</span>
         <span className="pt-1 text-2xl text-white">
