@@ -39,6 +39,7 @@ model oCV_experience {
     placeName   String   
     jobTitle    String   @default("")
     description String   @db.LongText
+    image       String   @default("")
     startDate   DateTime
     endDate     DateTime
 }
