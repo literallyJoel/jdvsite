@@ -3,10 +3,10 @@ import splashImage from "@src/images/splashlogo.png";
 import Image from "next/image";
 import { BsGithub } from "react-icons/bs";
 import Link from "next/link";
+
 export default function Home() {
   return (
     <>
-    
       <Head>
         <title>JDVivian</title>
         <meta name="description" content="JDVivian" />
@@ -20,7 +20,7 @@ export default function Home() {
         </span>
         <div className="flex flex-row gap-4 pt-2 text-white">
           <Link
-            href="/ocv"
+            href="/ocv?page=about"
             className="group relative inline-block cursor-pointer transition hover:scale-110"
           >
             Online CV
