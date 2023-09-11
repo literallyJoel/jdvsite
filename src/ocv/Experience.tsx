@@ -12,7 +12,7 @@ const Experience = (): JSX.Element => {
   //If the planetscale database is doing a coldstart it takes a second to start, so we show a loading spinner.
   if (isLoading) {
     return (
-      <div role="status">
+      <div role="status" className="flex flex-col items-center justify-center">
         <svg
           aria-hidden="true"
           className="mr-2 h-8 w-8 animate-spin fill-emerald-500 text-gray-200 dark:text-gray-600"
