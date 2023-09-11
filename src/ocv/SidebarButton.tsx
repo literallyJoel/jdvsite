@@ -15,7 +15,7 @@ export const SidebarButton = ({
   text,
 }: props): JSX.Element => {
   const searchParams = useSearchParams();
-  const page = searchParams.get("page") || "";
+  const page = searchParams.get("page") ?? "";
   return (
     <Link
       className={clsx(
