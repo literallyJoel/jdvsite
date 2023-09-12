@@ -12,24 +12,26 @@ datasource db {
 }
 
 model oCV_skills {
-    id        String   @id @default(cuid())
-    skillName String
+    id          String   @id @default(cuid())
+    skillName   String
+    image       String   @default("")
+    description String   @db.LongText
 }
 
 model oCV_education {
-    id           String   @id @default(cuid())
-    placeName    String
-    educationLevel String
-    startDate    DateTime
-    endDate      DateTime
-    qualifications oCV_qualifications[]
+    id              String   @id @default(cuid())
+    placeName       String
+    educationLevel  String
+    startDate       DateTime
+    endDate         DateTime
+    qualifications  oCV_qualifications[]
 }
 
 model oCV_qualifications {
-    id      String   @id @default(cuid())
-    placeID String
-    name    String
-    grade   String
+    id            String   @id @default(cuid())
+    placeID       String
+    name          String
+    grade         String
     oCV_education oCV_education @relation(fields: [placeID], references: [id])
     @@index([placeID])
 }
