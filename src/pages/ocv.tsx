@@ -4,6 +4,7 @@ import SideBar from "@src/ocv/SideBar";
 import { useSearchParams } from "next/navigation";
 import Head from "next/head";
 import Skills from "@src/ocv/Skills";
+import Education from "@src/ocv/Education";
 export type ViewMode = "about" | "skills" | "education" | "experience";
 
 const OCV = (): JSX.Element => {
@@ -22,6 +23,7 @@ const OCV = (): JSX.Element => {
         {page === "about" && <AboutMe />}
         {page === "experience" && <Experience />}
         {page === "skills" && <Skills/>}
+        {page === "education" && <Education/>}
       </main>
     </>
   );

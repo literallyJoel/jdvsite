@@ -1,8 +1,7 @@
 import { api } from "@src/utils/api";
-import clsx from "clsx";
 import ExperienceModal from "./ExperienceModal";
 import { useState } from "react";
-import { oCV_experience } from "@prisma/client";
+import type { oCV_experience } from "@prisma/client";
 
 const Experience = (): JSX.Element => {
   const { data: experience, isLoading } = api.ocv.getExperience.useQuery();
@@ -35,7 +34,7 @@ const Experience = (): JSX.Element => {
         setShouldShow={setShouldShowModal}
         experience={selectedExperience}
       />
-      {experience?.map((exp, index) => {
+      {experience?.map((exp) => {
         const startMonth = exp.startDate.toLocaleString("default", {
           month: "long",
         });
@@ -49,7 +48,7 @@ const Experience = (): JSX.Element => {
         }`;
         return (
           <button
-            key={index}
+            key={exp.id}
             className="group relative flex flex-col border-l-2 border-emerald-500  pl-2 pt-2 text-left text-white"
             onClick={() => {
               setShouldShowModal(true);

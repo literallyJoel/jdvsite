@@ -22,6 +22,7 @@ model oCV_education {
     id              String   @id @default(cuid())
     placeName       String
     educationLevel  String
+    image           String   @default("")
     startDate       DateTime
     endDate         DateTime
     qualifications  oCV_qualifications[]
