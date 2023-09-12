@@ -40,10 +40,13 @@ export default function Home() {
             </div>
           </span>
 
-          <span className="group relative inline-block cursor-pointer transition hover:scale-110">
+          <Link
+            href="/projects"
+            className="group relative inline-block cursor-pointer transition hover:scale-110"
+          >
             My Projects
             <span className="absolute bottom-0 left-0 h-[0.5%] w-full origin-left transform bg-white transition-all group-hover:bg-emerald-400"></span>
-          </span>
+          </Link>
         </div>
 
         <a
