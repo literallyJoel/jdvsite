@@ -1,14 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import splashLogo from "@src/images/splashlogo.png";
-import type { ViewMode } from "@src/pages/ocv";
-import clsx from "clsx";
 import { CgProfile } from "react-icons/cg";
 import { BsCardChecklist } from "react-icons/bs";
 import { MdOutlineClass } from "react-icons/md";
 import { HiOutlineDocumentText } from "react-icons/hi";
 import { SidebarButton } from "./SidebarButton";
-import { useSearchParams } from "next/navigation";
+
 
 const SideBar = (): JSX.Element => {
   return (

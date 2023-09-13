@@ -25,7 +25,7 @@ const ExperienceModal = ({
     } else {
       window.removeEventListener("keydown", handleEscapePress);
     }
-  }, [shouldShow]);
+  }, [shouldShow, setShouldShow]);
 
   const [isHidden, setIsHidden] = useState(true);
   const [isInvisible, setIsInvisible] = useState(true);

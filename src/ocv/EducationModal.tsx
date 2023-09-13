@@ -34,7 +34,7 @@ const EducationModal = ({
     } else {
       window.removeEventListener("keydown", handleEscapePress);
     }
-  }, [shouldShow]);
+  }, [shouldShow, setShouldShow]);
 
   const [isHidden, setIsHidden] = useState(true);
   const [isInvisible, setIsInvisible] = useState(true);
@@ -83,7 +83,7 @@ const EducationModal = ({
       <div className="text-center text-3xl">{education?.placeName}</div>
       <div className="text-center text-xl pb-4">{education?.educationLevel}</div>
       {qualifications?.map((qualification) => (
-        <div className="md:flex md:w-1/2 md:pl-28">
+        <div key={qualification.id} className="md:flex md:w-1/2 md:pl-28">
             <div className="md:w-1/2 md:text-left">{qualification.name}</div>
             <div className="md:w-1/2 ">{qualification.grade}</div>
         </div>

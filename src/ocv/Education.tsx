@@ -1,4 +1,4 @@
-import { oCV_education } from "@prisma/client";
+import type { oCV_education } from "@prisma/client";
 import { api } from "@src/utils/api";
 import { useState } from "react";
 import EducationModal from "./EducationModal";

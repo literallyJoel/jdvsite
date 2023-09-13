@@ -26,7 +26,7 @@ const Experience = (): JSX.Element => {
     );
   }
 
-  const _exp = experience![0];
+
   return (
     <div className="relative h-full w-full grid-flow-col grid-rows-3 p-12 font-monsterrat md:grid md:h-screen">
       <ExperienceModal

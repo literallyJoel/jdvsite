@@ -2,7 +2,6 @@ import Head from "next/head";
 import splashImage from "@src/images/splashlogo.png";
 import Image from "next/image";
 import { BsGithub } from "react-icons/bs";
-import Link from "next/link";
 
 export default function Projects() {
   return (

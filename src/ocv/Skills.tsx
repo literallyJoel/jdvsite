@@ -1,4 +1,4 @@
-import { oCV_skills } from "@prisma/client";
+import type { oCV_skills } from "@prisma/client";
 import { api } from "@src/utils/api";
 import { useState } from "react";
 import SkillsModal from "./SkillsModal";
