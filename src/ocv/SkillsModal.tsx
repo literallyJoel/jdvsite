@@ -1,4 +1,4 @@
-import { oCV_skills } from "@prisma/client";
+import type { oCV_skills } from "@prisma/client";
 import clsx from "clsx";
 import Image from "next/image";
 import { useEffect, useState } from "react";

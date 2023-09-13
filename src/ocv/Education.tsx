@@ -8,8 +8,23 @@ const Education = (): JSX.Element => {
   const [shouldShowModal, setShouldShowModal] = useState(false);
   const [selectedEdu, setSelectedEdu] = useState<oCV_education>();
 
+  if (isLoading) {
+    return (
+      <div className="flex w-full flex-row items-center justify-center gap-4">
+        <div className="h-4 w-4 animate-bounce rounded-full bg-emerald-600 p-2" />
+        <div
+          className="h-5 w-5 animate-bounce rounded-full bg-emerald-600 p-2 "
+          style={{ animationDelay: "0.15s" }}
+        />
+        <div
+          className="h-6 w-6 animate-bounce rounded-full bg-emerald-600 p-2"
+          style={{ animationDelay: "0.3s" }}
+        />
+      </div>
+    );
+  }
   return (
-    <div className="relative flex h-full w-full flex-col md:flex-row items-center justify-center p-12 font-monsterrat md:h-screen">
+    <div className="relative flex h-full w-full flex-col items-center justify-center p-12 font-monsterrat md:h-screen md:flex-row">
       <EducationModal
         education={selectedEdu}
         shouldShow={shouldShowModal}
@@ -30,7 +45,7 @@ const Education = (): JSX.Element => {
         return (
           <button
             key={edu.id}
-            className="md:border-l-0 group relative flex flex-col border-l-2 border-emerald-500 pl-2  pt-2 text-left text-white md:border-t-2"
+            className="group relative flex flex-col border-l-2 border-emerald-500 pl-2 pt-2  text-left text-white md:border-l-0 md:border-t-2"
             onClick={() => {
               setShouldShowModal(true);
               setSelectedEdu(edu);

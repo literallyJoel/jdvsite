@@ -33,6 +33,7 @@ const Skills = (): JSX.Element => {
       />
       {skills?.map((skill) => (
         <button
+          key={skill.id}
           className="group relative flex flex-col justify-center border-l-2  border-emerald-500 pl-2 pt-2 text-left text-white"
           onClick={() => {
             setSelectedSkill(skill);
