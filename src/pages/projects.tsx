@@ -2,7 +2,7 @@ import Head from "next/head";
 import splashImage from "@src/images/splashlogo.png";
 import Image from "next/image";
 import { BsGithub } from "react-icons/bs";
-
+import Link from "next/link";
 export default function Projects() {
   return (
     <>
@@ -12,7 +12,15 @@ export default function Projects() {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <main className="font-Montserrat flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-jdvred to-jdvredlight">
-        <Image src={splashImage} width={250} height={250} alt="JDVLogo" />
+        <Link href="/">
+          <Image
+            src={splashImage}
+            width={250}
+            height={250}
+            alt="JDVLogo"
+            className="transition-transform hover:scale-110"
+          />
+        </Link>
         <span className="pb-8 pt-4 text-3xl text-white">
           {"This bit isn't quite ready yet."}
         </span>
