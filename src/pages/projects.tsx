@@ -76,7 +76,7 @@ export default function Projects() {
           Checkout my GitHub for a full list!
         </div>
 
-        <div className="grid md:grid-cols-2 sm:grid-cols-1  w-full p-4">
+        <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-2 w-full p-4">
           <ProjectCard
             img={jdvsite}
             ghLink="https://github.com/literallyJoel/jdvsite"
