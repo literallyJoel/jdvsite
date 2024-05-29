@@ -2,7 +2,7 @@
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
  * for Docker builds.
  */
-await import("./src/env.mjs");
+await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
 const config = {
@@ -17,7 +17,16 @@ const config = {
     locales: ["en"],
     defaultLocale: "en",
   },
-  
+  transpilePackages: ["geist"],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "01eilists49oe3kh.public.blob.vercel-storage.com",
+        port: "",
+      },
+    ],
+  },
 };
 
 export default config;

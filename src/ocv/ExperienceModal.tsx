@@ -1,9 +1,9 @@
-import { oCV_experience } from "@prisma/client";
+import type { experience } from "@/server/db/schema";
 import clsx from "clsx";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 interface props {
-  experience?: oCV_experience;
+  experience?: experience;
   shouldShow: boolean;
   setShouldShow: React.Dispatch<React.SetStateAction<boolean>>;
 }

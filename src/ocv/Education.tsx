@@ -1,12 +1,12 @@
-import type { oCV_education } from "@prisma/client";
-import { api } from "@src/utils/api";
+import { api } from "@/utils/api";
 import { useState } from "react";
 import EducationModal from "./EducationModal";
+import type { education } from "@/server/db/schema";
 
 const Education = (): JSX.Element => {
   const { data: education, isLoading } = api.ocv.getEducation.useQuery();
   const [shouldShowModal, setShouldShowModal] = useState(false);
-  const [selectedEdu, setSelectedEdu] = useState<oCV_education>();
+  const [selectedEdu, setSelectedEdu] = useState<education>();
 
   if (isLoading) {
     return (
@@ -24,23 +24,23 @@ const Education = (): JSX.Element => {
     );
   }
   return (
-    <div className="relative flex h-full w-full flex-col items-center justify-center p-12 font-monsterrat md:h-screen md:flex-row">
+    <div className="font-monsterrat relative flex h-full w-full flex-col items-center justify-center p-12 md:h-screen md:flex-row">
       <EducationModal
         education={selectedEdu}
         shouldShow={shouldShowModal}
         setShouldShow={setShouldShowModal}
       />
-      {education?.map((edu) => {
-        const startMonth = edu.startDate.toLocaleString("default", {
+      {education!.map((edu) => {
+        const startMonth = edu.startDate!.toLocaleString("default", {
           month: "long",
         });
-        const endMonth = edu.endDate.toLocaleString(`default`, {
+        const endMonth = edu.endDate!.toLocaleString(`default`, {
           month: "long",
         });
-        const dateRange = `${startMonth} ${edu.startDate.getFullYear()} - ${
-          edu.endDate.getFullYear() === 1970
+        const dateRange = `${startMonth} ${edu.startDate!.getFullYear()} - ${
+          edu.endDate!.getFullYear() === 1970
             ? `Present`
-            : `${endMonth} ${edu.endDate.getFullYear()}`
+            : `${endMonth} ${edu.endDate!.getFullYear()}`
         }`;
         return (
           <button

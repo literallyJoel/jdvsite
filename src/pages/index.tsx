@@ -1,5 +1,5 @@
 import Head from "next/head";
-import splashImage from "@src/images/splashlogo.png";
+import splashImage from "@/assets/img/splashlogo.png";
 import Image from "next/image";
 import { BsGithub } from "react-icons/bs";
 import Link from "next/link";
@@ -12,7 +12,7 @@ export default function Home() {
         <meta name="description" content="JDVivian" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <main className="font-Montserrat flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-jdvred to-jdvredlight">
+      <main className="font-Montserrat from-jdvred to-jdvredlight flex min-h-screen flex-col items-center justify-center bg-gradient-to-b">
         <Image src={splashImage} width={250} height={250} alt="JDVLogo" />
         <span className="pt-4 text-4xl text-white">{"Hi, I'm Joel."}</span>
         <span className="pt-1 text-2xl text-white">
@@ -31,10 +31,16 @@ export default function Home() {
             Download CV ▾
             <span className="absolute bottom-0 left-0 z-0 h-[0.5%] w-full origin-left transform bg-white group-hover:hidden"></span>
             <div className="absolute hidden w-full flex-col rounded-b-md bg-white transition-transform duration-300 group-hover:flex group-hover:translate-y-0">
-              <Link href="/files/JDVCV.docx" className="p-4 text-sm text-black transition-colors hover:bg-emerald-600 hover:text-white">
+              <Link
+                href="/files/JDVCV.docx"
+                className="p-4 text-sm text-black transition-colors hover:bg-emerald-600 hover:text-white"
+              >
                 Word
               </Link>
-              <Link href="/files/JDVCV.pdf" className="tranisiton-colors rounded-b-md p-4 text-sm text-black  hover:bg-emerald-600 hover:text-white">
+              <Link
+                href="/files/JDVCV.pdf"
+                className="tranisiton-colors rounded-b-md p-4 text-sm text-black  hover:bg-emerald-600 hover:text-white"
+              >
                 PDF
               </Link>
             </div>

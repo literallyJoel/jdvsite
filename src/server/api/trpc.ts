@@ -11,7 +11,7 @@ import { type CreateNextContextOptions } from "@trpc/server/adapters/next";
 import superjson from "superjson";
 import { ZodError } from "zod";
 
-import { prisma } from "@src/server/db";
+import { db } from "@/server/db";
 
 /**
  * 1. CONTEXT
@@ -35,7 +35,7 @@ type CreateContextOptions = Record<string, never>;
  */
 const createInnerTRPCContext = (_opts: CreateContextOptions) => {
   return {
-    prisma,
+    db,
   };
 };
 
@@ -70,6 +70,13 @@ const t = initTRPC.context<typeof createTRPCContext>().create({
     };
   },
 });
+
+/**
+ * Create a server-side caller.
+ *
+ * @see https://trpc.io/docs/server/server-side-calls
+ */
+export const createCallerFactory = t.createCallerFactory;
 
 /**
  * 3. ROUTER & PROCEDURE (THE IMPORTANT BIT)

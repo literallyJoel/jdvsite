@@ -1,10 +1,10 @@
-import type { oCV_skills } from "@prisma/client";
-import { api } from "@src/utils/api";
+import { api } from "@/utils/api";
 import { useState } from "react";
 import SkillsModal from "./SkillsModal";
+import type { skills } from "../server/db/schema";
 const Skills = (): JSX.Element => {
   const [shouldShowModal, setShouldShowModal] = useState(false);
-  const [selectedSkill, setSelectedSkill] = useState<oCV_skills>();
+  const [selectedSkill, setSelectedSkill] = useState<skills>();
 
   const { data: skills, isLoading } = api.ocv.getSkills.useQuery();
 

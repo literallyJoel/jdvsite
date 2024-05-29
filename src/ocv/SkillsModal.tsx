@@ -1,9 +1,9 @@
-import type { oCV_skills } from "@prisma/client";
+import type { skills } from "@/server/db/schema";
 import clsx from "clsx";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 interface props {
-  skill?: oCV_skills;
+  skill?: skills;
   shouldShow: boolean;
   setShouldShow: React.Dispatch<React.SetStateAction<boolean>>;
 }

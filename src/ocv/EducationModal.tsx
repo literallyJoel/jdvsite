@@ -1,11 +1,11 @@
-import type { oCV_education } from "@prisma/client";
 import clsx from "clsx";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { api } from "@src/utils/api";
+import { api } from "@/utils/api";
+import type { education } from "@/server/db/schema";
 
 interface props {
-  education?: oCV_education;
+  education?: education;
   shouldShow: boolean;
   setShouldShow: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -15,14 +15,6 @@ const EducationModal = ({
   shouldShow,
   setShouldShow,
 }: props): JSX.Element => {
-  const { data: qualifications, isLoading } =
-    api.ocv.getQualifications.useQuery(
-      { educationID: education?.id ?? "" },
-      {
-        enabled: !!education,
-      },
-    );
-
   useEffect(() => {
     const handleEscapePress = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -62,32 +54,6 @@ const EducationModal = ({
     }
   }, [shouldShow]);
 
-  if (isLoading) {
-    return (
-      <button
-        className={clsx(
-          "absolute left-0 top-0 z-20 h-screen w-full -translate-y-full flex-row items-center justify-center gap-2 bg-black bg-opacity-50 p-16 text-white backdrop-blur-md transition-transform duration-300 md:h-full",
-          {
-            "translate-y-0": !isInvisible,
-            hidden: isHidden,
-            flex: !isHidden,
-          },
-        )}
-        onClick={() => setShouldShow(false)}
-      >
-        <div className="h-4 w-4 animate-bounce rounded-full bg-emerald-600 p-2" />
-        <div
-          className="h-5 w-5 animate-bounce rounded-full bg-emerald-600 p-2 "
-          style={{ animationDelay: "0.15s" }}
-        />
-        <div
-          className="h-6 w-6 animate-bounce rounded-full bg-emerald-600 p-2"
-          style={{ animationDelay: "0.3s" }}
-        />
-      </button>
-    );
-  }
-
   return (
     <button
       className={clsx(
@@ -111,7 +77,7 @@ const EducationModal = ({
       <div className="pb-4 text-center text-xl">
         {education?.educationLevel}
       </div>
-      {qualifications?.map((qualification) => (
+      {education?.qualifications?.map((qualification) => (
         <div key={qualification.id} className="md:flex md:w-1/2 md:pl-28">
           <div className="md:w-1/2 md:text-left">{qualification.name}</div>
           <div className="md:w-1/2 ">{qualification.grade}</div>

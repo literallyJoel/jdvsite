@@ -1,13 +1,13 @@
-import { api } from "@src/utils/api";
+import { api } from "@/utils/api";
 import ExperienceModal from "./ExperienceModal";
 import { useState } from "react";
-import type { oCV_experience } from "@prisma/client";
+import type { experience } from "@/server/db/schema";
 
 const Experience = (): JSX.Element => {
   const { data: experience, isLoading } = api.ocv.getExperience.useQuery();
   const [shouldShowModal, setShouldShowModal] = useState(false);
   const [selectedExperience, setSelectedExperience] =
-    useState<oCV_experience>();
+    useState<experience>();
   //If the planetscale database is doing a coldstart it takes a second to start, so we show a loading spinner.
 
   if (isLoading) {
@@ -35,16 +35,16 @@ const Experience = (): JSX.Element => {
         experience={selectedExperience}
       />
       {experience?.map((exp) => {
-        const startMonth = exp.startDate.toLocaleString("default", {
+        const startMonth = exp.startDate?.toLocaleString("default", {
           month: "long",
         });
-        const endMonth = exp.endDate.toLocaleString(`default`, {
+        const endMonth = exp.endDate?.toLocaleString(`default`, {
           month: "long",
         });
-        const dateRange = `${startMonth} ${exp.startDate.getFullYear()} - ${
-          exp.endDate.getFullYear() === 1970
+        const dateRange = `${startMonth} ${exp.startDate?.getFullYear()} - ${
+          exp.endDate?.getFullYear() === 1970
             ? `Present`
-            : `${endMonth} ${exp.endDate.getFullYear()}`
+            : `${endMonth} ${exp.endDate?.getFullYear()}`
         }`;
         return (
           <button

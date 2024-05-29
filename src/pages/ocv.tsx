@@ -1,10 +1,10 @@
-import AboutMe from "@src/ocv/AboutMe";
-import Experience from "@src/ocv/Experience";
-import SideBar from "@src/ocv/SideBar";
+import AboutMe from "@/ocv/AboutMe";
+import Experience from "@/ocv/Experience";
+import SideBar from "@/ocv/SideBar";
 import { useSearchParams } from "next/navigation";
 import Head from "next/head";
-import Skills from "@src/ocv/Skills";
-import Education from "@src/ocv/Education";
+import Skills from "@/ocv/Skills";
+import Education from "@/ocv/Education";
 export type ViewMode = "about" | "skills" | "education" | "experience";
 
 const OCV = (): JSX.Element => {
@@ -18,12 +18,12 @@ const OCV = (): JSX.Element => {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <main className="font-montserrat max-flex-row flex min-h-full bg-gradient-to-b from-jdvred to-jdvredlight">
+      <main className="font-montserrat max-flex-row from-jdvred to-jdvredlight flex min-h-full bg-gradient-to-b">
         <SideBar />
         {page === "about" && <AboutMe />}
         {page === "experience" && <Experience />}
-        {page === "skills" && <Skills/>}
-        {page === "education" && <Education/>}
+        {page === "skills" && <Skills />}
+        {page === "education" && <Education />}
       </main>
     </>
   );
