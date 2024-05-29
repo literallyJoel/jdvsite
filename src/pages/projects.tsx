@@ -1,6 +1,6 @@
 import Head from "next/head";
 import splashImage from "@/assets/img/splashlogo.png";
-import Image, { StaticImageData } from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import { BsGithub, BsGlobe } from "react-icons/bs";
 import Link from "next/link";
 import jdvsite from "@/assets/img/gitsplash/jdvsite.png";

@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { api } from "@/utils/api";
 import type { education } from "@/server/db/schema";
 
 interface props {
